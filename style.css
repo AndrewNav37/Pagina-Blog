@@ -128,9 +128,17 @@ body {
 
     .banner-img {
         width: 100%;
-        max-width: 300px; 
+        max-width: 1200px; 
         height: 100%;
-        max-height: 125px;
+        max-height: 500px;
+    }
+
+    .logo-img {
+        width: 80%;
+        max-width: 800px;
+        height: 80%;
+        max-height: 800px;
+        object-fit: contain;
     }
 
     .nav-menu {
@@ -140,7 +148,7 @@ body {
     }
 
     .btn-nav {
-        width: 50%; 
+        width: 15%; 
         text-align: center;
     }
 
