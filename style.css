@@ -139,8 +139,9 @@ h1, h2, h3 {
     }
 
     h1, h2, h3 {
-    color: turquoise;
-    margin-left: 0 auto;
+        color: turquoise;
+        text-align: justify;   /* Centramos los títulos en móvil */
+        margin-left: 0;       /* Corregido: eliminamos el margen de escritorio */
     }
 
     /* Forzamos al contenedor del header a centrar sus elementos hijos */
@@ -159,10 +160,10 @@ h1, h2, h3 {
     }
 
     .logo-img {
-        width: 80%;       /* Un tamaño fijo o controlado se ve mucho mejor en móvil */
-        max-width: 400px;   /* Limita el tamaño máximo del logo */
-        height: 70%;       /* Mantiene la proporción original de la imagen */
-        max-height: auto;  /* Limita la altura máxima del logo */   
+        width: 80%;       
+        max-width: 400px;   
+        height: 70%;       
+        max-height: auto;     
     }
 
     .nav-menu {
@@ -172,24 +173,27 @@ h1, h2, h3 {
     }
 
     .btn-nav {
-        width: 60%;         /* Corregido: 70% para que abarque bien la pantalla táctil */
+        width: 60%;         
         text-align: center;
     }
 
+    /* 👇 CORREGIDO AQUÍ 👇 */
     .main-content p {
-    color: white;
-    text-align: left;
-    margin-left: 0 auto;
+        color: white;
+        text-align: justify;   /* Cambiado a justify para que se vea bien en móvil */
+        margin-left: 0;       /* Limpiamos el margen izquierdo */
+        margin-right: 0;
     }
 
-
     .about-section h2 {
-    margin-left: 0 auto;
+        text-align: justify;
+        margin-left: 0;       /* Limpiamos el margen */
     }
 
     .about-section p {
-    margin-left: 0 auto;
-    margin-right: 0 auto;
+        text-align: justify;   /* O justify si prefieres, pero centrado evita desbordes */
+        margin-left: 0;       /* Limpiamos los márgenes laterales */
+        margin-right: 0;
     }
 
     .site-header, 
