@@ -138,6 +138,11 @@ h1, h2, h3 {
         padding: 10px;
     }
 
+    h1, h2, h3 {
+    color: turquoise;
+    margin-left: 0 auto;
+    }
+
     /* Forzamos al contenedor del header a centrar sus elementos hijos */
     .header-img-content {
        display: flex;
@@ -169,6 +174,22 @@ h1, h2, h3 {
     .btn-nav {
         width: 60%;         /* Corregido: 70% para que abarque bien la pantalla táctil */
         text-align: center;
+    }
+
+    .main-content p {
+    color: white;
+    text-align: left;
+    margin-left: 0 auto;
+    }
+
+
+    .about-section h2 {
+    margin-left: 0 auto;
+    }
+
+    .about-section p {
+    margin-left: 0 auto;
+    margin-right: 0 auto;
     }
 
     .site-header, 
