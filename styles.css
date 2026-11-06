@@ -12,6 +12,22 @@ h1, h2, h3 {
     margin-left: 45px;
 }
 
+aside{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    gap: 10px;
+}
+
+aside img {
+    width: 34px;
+    height: 34px;
+}
+
+
 .site-header {
     background-color: rgb(5, 40, 80);
     border-radius: 20px;
