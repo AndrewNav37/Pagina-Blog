@@ -1,18 +1,55 @@
-/* ESTILOS GENERALES (DESKTOP) */
-body {
+/* ========================================= */
+/* REINICIO Y CONFIGURACIÓN GLOBAL           */
+/* ========================================= */
+* {
+    box-sizing: border-box;
+}
 
-    background-color: rgb(2, 15, 31);
+body {
+    background-color: rgb(6, 30, 58);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-h1, h2, h3 {
+h1, h2, h3, span {
     color: turquoise;
     margin-left: 45px;
 }
 
-aside{
+/* ========================================= */
+/* ESTRUCTURA PRINCIPAL Y BORDES             */
+/* ========================================= */
+main, header, footer {
+    border: 1px solid #003d80;
+    width: 100%;
+}
+
+header, footer {
+    max-width: 1250px;
+}
+
+header {
+    min-height: 250px;
+}
+
+main {
+    max-width: 1100px;
+}
+
+/* ========================================= */
+/* BARRA LATERAL FLOTANTE (ASIDE)            */
+/* ========================================= */
+aside {
+    align-items: center;
+    border: 1px solid #003d80;
+    border-radius: 12px;
+    width: 44px;
+    padding: 8px 0;
+    background-color: rgb(12, 31, 53);
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -20,6 +57,7 @@ aside{
     top: 50%;
     transform: translateY(-50%);
     gap: 10px;
+    z-index: 100;
 }
 
 aside img {
@@ -27,12 +65,32 @@ aside img {
     height: 34px;
 }
 
+.btn-aside {
+    width: 34px;
+    height: 34px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
 
+.btn-aside:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-aside:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================= */
+/* ENCABEZADO Y NAVEGACIÓN                   */
+/* ========================================= */
 .site-header {
-    background-color: rgb(5, 40, 80);
+    background-color: rgb(5, 34, 68);
     border-radius: 20px;
     padding: 20px;
 }
+
 .header-content {
     display: flex;
     justify-content: center;
@@ -47,7 +105,7 @@ aside img {
 .logo-img {
     width: 80%;
     max-width: 350px;
-    height: 80%;
+    height: auto;
     max-height: 350px;
     object-fit: contain;
 }
@@ -59,7 +117,6 @@ aside img {
     margin-top: 20px;
 }
 
-/* Estilo moderno para los botones del menú */
 .btn-nav {
     background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
@@ -86,43 +143,50 @@ aside img {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* ========================================= */
+/* CONTENIDO PRINCIPAL (MAIN)                */
+/* ========================================= */
 .site-main {
-    background-color: rgb(5, 40, 80);
+    background-color: rgb(5, 34, 68);
     border-radius: 20px;
     padding: 20px;
     margin-top: 20px;
     color: white;
 }
 
-.main-content h1{
+.main-content h1 {
     color: turquoise;
     text-align: center;
+    margin-left: 0;
 }
 
 .main-content p {
     color: white;
     text-align: left;
     margin-left: 40px;
+    margin-right: 40px;
 }
-
 
 .about-section h2 {
     color: turquoise;
     text-align: left;
-    margin-left: 50px;
+    margin-left: 40px;
 }
 
 .about-section p {
     color: white;
-    text-align:justify;
+    text-align: justify;
     margin-left: 40px;
     margin-right: 40px;
 }
 
+/* ========================================= */
+/* PIE DE PÁGINA (FOOTER)                    */
+/* ========================================= */
 .site-footer {
     text-align: center;
     padding: 20px;
-    background-color: rgb(5, 40, 80);
+     background-color: rgb(5, 34, 68);
     border-radius: 20px;
     margin-top: 20px;
     color: white;
@@ -146,29 +210,32 @@ aside img {
     margin-right: 0;
 }
 
-/* ========================== */
-/* DISEÑO RESPONSIVE (MÓVILES) */
-/* ========================== */
+/* ========================================= */
+/* DISEÑO RESPONSIVE (MÓVILES)               */
+/* ========================================= */
 @media screen and (max-width: 768px) {
     body {
         padding: 10px;
     }
 
     h1, h2, h3 {
-        color: turquoise;
-        text-align: justify;   /* Centramos los títulos en móvil */
-        margin-left: 0;       /* Corregido: eliminamos el margen de escritorio */
+        text-align: center;
+        margin-left: 0;
     }
 
-    /* Forzamos al contenedor del header a centrar sus elementos hijos */
+    /* Ocultamos la barra lateral flotante para que no tape el contenido en celular */
+    aside {
+        display: none;
+    }
+
+    .header-content,
     .header-img-content {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 
-    /* Aseguramos que la caja del logo ocupe todo el ancho y centre su contenido */
     .logo-container {
         display: flex;
         justify-content: center;
@@ -176,40 +243,34 @@ aside img {
     }
 
     .logo-img {
-        width: 80%;       
-        max-width: 400px;   
-        height: 70%;       
-        max-height: auto;     
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+        max-height: none;
     }
 
     .nav-menu {
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
         gap: 12px;
     }
 
     .btn-nav {
-        width: 60%;         
+        width: 80%;
+        max-width: 280px;
         text-align: center;
     }
 
-    /* 👇 CORREGIDO AQUÍ 👇 */
-    .main-content p {
-        color: white;
-        text-align: justify;   /* Cambiado a justify para que se vea bien en móvil */
-        margin-left: 0;       /* Limpiamos el margen izquierdo */
+    .main-content p,
+    .about-section p {
+        text-align: justify;
+        margin-left: 0;
         margin-right: 0;
     }
 
     .about-section h2 {
-        text-align: justify;
-        margin-left: 0;       /* Limpiamos el margen */
-    }
-
-    .about-section p {
-        text-align: justify;   /* O justify si prefieres, pero centrado evita desbordes */
-        margin-left: 0;       /* Limpiamos los márgenes laterales */
-        margin-right: 0;
+        text-align: center;
+        margin-left: 0;
     }
 
     .site-header, 
